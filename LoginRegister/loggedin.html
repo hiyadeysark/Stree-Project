@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loggedin</title>
+    </head>
+    <body>
+        <div id = "user_div">
+            <h1>WELCOME</h1>
+            <p>You are currently logged in</p>
+            <button id="logout">Log Out</button>
+        </div>
+
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAxNpYy-IjARkWtiPHNq-vjnozGHkG3_j0",
+        authDomain: "login-27a9b.firebaseapp.com",
+        projectId: "login-27a9b",
+        storageBucket: "login-27a9b.appspot.com",
+        messagingSenderId: "358218026922",
+        appId: "1:358218026922:web:b9a8c3301592178912a5d3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //make auth and firestore references 
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+    
+    <script src="authlogout.js"></script>
+
+    </body>
+</html>

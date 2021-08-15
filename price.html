@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>STree - We care for you</title>
+        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="Shopping/styles.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="top-bar-left">
+                             <div class="text">
+                                <i class="far fa-clock"></i>
+                                <h2>Open 24 x 7</h2>
+                                <p>Mon - Fri</p>
+                            </div>
+                            <div class="text">
+                                <i class="fa fa-phone-alt"></i>
+                                <h2>Helpline Number: +91 72571 89471</h2>
+                                <!-- <p>For Appointment</p> -->
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">ST<span>ree</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <li class="logged-out" style="display: none;">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
+                            <a href="service.html" class="nav-item nav-link">Service</a>
+                        </li>
+                        <li class="logged-in" style="display: none;">
+                            <a href="price.html" class="nav-item nav-link active">Purchase</a>
+                        </li>
+                        <li class="logged-in" style="display: none;">
+                            <a href="calendar.html" class="nav-item nav-link">Calendar</a>
+                        </li>
+                        
+                     <!-- <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+                            <div class="dropdown-menu">
+                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                <a href="single.html" class="dropdown-item">Blog Detail</a>
+                            </div>
+                        </div> -->
+                        <li class="logged-out-invisible" style="display: none;">
+                            <a href="/Stree/LoginRegister/index.html" class="nav-item nav-link">Login or Sign Up</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </li>
+                        <li class="logged-in" style="display: none;">
+                            <a href="index.html" class="nav-item nav-link" id = "logout">Log Out</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Purchase</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Purchase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Price Start -->
+        <div id="app">
+            <div id="product">
+              <item v-for="item in items" v-bind:item_data="item"></item>
+            </div>
+            <div id="cart">
+              <div id="head">
+                <h3>Shopping Cart</h3>
+                <div id="price">Price</div>
+                <div id="quantity">Quantity</div>
+                <div id="total">Total</div>
+              </div>
+              <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
+              <h5 v-if="total()">Sum: $ {{total()}}</h5>
+            </div>
+          </div>
+          
+          
+          <template id="product-box">
+            <div class="box">
+              <img :src="item_data.img"/>
+              <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
+              <h2>{{item_data.title}}</h2>
+              <p>$ {{item_data.price}}</p>
+            </div>
+          </template>
+          
+          <template id="buy-box">
+            <div class="row">
+              <img :src="buy_data.img"/>
+              <h4>{{buy_data.title}}</h4>
+              <p>$ {{buy_data.price}}</p>
+              <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
+              <div class="qty">{{buy_data.qty}}</div>
+              <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
+              <div class="del" v-on:click="removeItem(buy_data)">Remove</div>
+              <div class="totalprice">{{buy_data.total}}</div>
+            </div>
+          </template>
+          
+          <div class="container-btn">
+                <button class="learn-more" v-on:click="checkout">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Checkout</span>
+                </button>
+                <!-- <button>Learn More</button> -->
+            </div>
+        <!-- price end -->
+        
+        
+        <!-- Discount Start -->
+        <div class="discount wow zoomIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Get <span>50%</span> Discount on your First Order</h2>
+                    <br>
+                </div>
+               
+            </div>
+        </div>  
+        <!-- Discount End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <a href="index.html" class="footer-logo">ST<span>ree</span></a>
+                        <h3>Thapar University, Patiala, Punjab</h3>
+                        <div class="footer-menu">
+                            <p>+91 88001 73088</p>
+                            <p>stree.info@thapar.edu</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAxNpYy-IjARkWtiPHNq-vjnozGHkG3_j0",
+            authDomain: "login-27a9b.firebaseapp.com",
+            projectId: "login-27a9b",
+            storageBucket: "login-27a9b.appspot.com",
+            messagingSenderId: "358218026922",
+            appId: "1:358218026922:web:b9a8c3301592178912a5d3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //make auth and firestore references 
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        </script>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+        <script src="Shopping/main.js"></script>
+        <script src="js/main.js"></script>
+        <script src="/Stree/LoginRegister/authlogout.js"></script>
+        <script src="navigation.js"></script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Producrs Cards</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+
+    <body>
+        <div id="app">
+            <div id="product">
+              <item v-for="item in items" v-bind:item_data="item"></item>
+            </div>
+            <div id="cart">
+              <div id="head">
+                <h3>Shopping Cart</h3>
+                <div id="price">Price</div>
+                <div id="quantity">Quantity</div>
+                <div id="total">Total</div>
+              </div>
+              <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
+              <h5 v-if="total()">Sum: $ {{total()}}</h5>
+            </div>
+          </div>
+          
+          
+          <template id="product-box">
+            <div class="box">
+              <img :src="item_data.img"/>
+              <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
+              <h2>{{item_data.title}}</h2>
+              <p>$ {{item_data.price}}</p>
+            </div>
+          </template>
+          
+          <template id="buy-box">
+            <div class="row">
+              <img :src="buy_data.img"/>
+              <h4>{{buy_data.title}}</h4>
+              <p>$ {{buy_data.price}}</p>
+              <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
+              <div class="qty">{{buy_data.qty}}</div>
+              <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
+              <div class="del" v-on:click="removeItem(buy_data)">Remove</div>
+              <div class="totalprice">{{buy_data.total}}</div>
+            </div>
+          </template>
+          
+          <div class="container-btn">
+                <button class="learn-more" v-on:click="checkout">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Checkout</span>
+                </button>
+                <!-- <button>Learn More</button> -->
+            </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+          <script src="main.js"></script>
+          
+
+    </body>
+
+</html>

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+html, body {
+    background-color: #eee;
+    font-family: calibri, sans-serif;  
+    max-width: 1920px; 
+}
+#app {
+    width: 760px;
+    margin: 20px auto;
+}
+#app #product .box {
+    width: 230px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#app #product .box img {
+    width: 230px;
+}
+#app #product .box i {
+    width: 50px;
+    height: 50px;
+    background: #ed277f;
+    color: #fff;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 20px;
+    top: 150px;
+    box-shadow: 0 0 4px 2px rgba(80, 80, 80, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#app #product .box i:hover {
+    transform: scale(1.05);
+}
+#app #product .box h2 {
+    margin-left: 10px;
+}
+#app #product .box p {
+    margin-left: 10px;
+}
+#app #cart {
+    margin-top: 50px;
+    overflow: hidden;
+}
+#app #cart #head {
+    width: 100%;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+    display: block;
+}
+#app #cart #head h3 {
+    display: inline-block;
+    line-height: 40px;
+    margin: 0;
+}
+#app #cart #head #price {
+    display: inline-block;
+    color: #777;
+    margin-left: 200px;
+    line-height: 40px;
+}
+#app #cart #head #quantity {
+    display: inline-block;
+    color: #777;
+    margin-left: 100px;
+    line-height: 40px;
+}
+#app #cart #head #total {
+    display: inline-block;
+    color: #777;
+    line-height: 40px;
+    /* float: right; */
+}
+#app #cart .row {
+    width: 100%;
+    border-bottom: 1px solid #bfbfbf;
+    overflow: hidden;
+    padding: 10px 0;
+    display: block;
+    float: left;
+}
+#app #cart .row img {
+    height: 100px;
+    float: left;
+}
+#app #cart .row h4 {
+    float: left;
+    margin: 0;
+    line-height: 100px;
+    margin-left: 20px;
+    width: 100px;
+}
+#app #cart .row p {
+    float: left;
+    margin: 0;
+    width: 80px;
+    line-height: 100px;
+    margin-left: 35px;
+    text-align: center;
+}
+#app #cart .row .qty-minus {
+    float: left;
+    width: 20px;
+    line-height: 100px;
+    margin-left: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+#app #cart .row .qty {
+    float: left;
+    width: 20px;
+    line-height: 100px;
+    margin-left: 20px;
+    text-align: center;
+}
+#app #cart .row .qty-plus {
+    float: left;
+    width: 20px;
+    line-height: 100px;
+    margin-left: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+#app #cart .row .del {
+    float: left;
+    width: 80px;
+    line-height: 100px;
+    margin-left: 60px;
+    cursor: pointer;
+    /* text-decoration: underline; */
+    color: #ed277f;
+    font-size: 20px;
+}
+#app #cart .row .totalprice {
+    float: left;
+    width: 80px;
+    line-height: 100px;
+    margin-left: 10px;
+    text-align: right;
+}
+#app #cart .row .row p::before, #app #cart .row .box p::before, #app #cart .row .totalprice::before {
+    content: "$";
+}
+#app #cart h5 {
+    font-size: 20px;
+    text-align: right;
+}
+
+
+
+
+.container-btn{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    margin-left: 42%;
+}
+
+ button.learn-more {
+	 width: 12rem;
+	 height: auto;
+}
+ button.learn-more .circle {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: relative;
+	 display: block;
+	 margin: 0;
+	 width: 3rem;
+	 height: 3rem;
+	 background: #282936;
+	 border-radius: 1.625rem;
+}
+ button.learn-more .circle .icon {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 margin: auto;
+	 background: #fff;
+}
+ button.learn-more .circle .icon.arrow {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 left: 0.625rem;
+	 width: 1.125rem;
+	 height: 0.125rem;
+	 background: none;
+}
+ button.learn-more .circle .icon.arrow::before {
+	 position: absolute;
+	 content: '';
+	 top: -0.25rem;
+	 right: 0.0625rem;
+	 width: 0.625rem;
+	 height: 0.625rem;
+	 border-top: 0.125rem solid #fff;
+	 border-right: 0.125rem solid #fff;
+	 transform: rotate(45deg);
+}
+
+ button.learn-more .button-text {
+	 transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 padding: 0.75rem 0;
+	 margin: 0 0 0 1.85rem;
+	 color: #282936;
+	 font-weight: 700;
+	 line-height: 1.6;
+	 text-align: center;
+	 text-transform: uppercase;
+}
+ button:hover .circle {
+	 width: 100%;
+}
+ button:hover .circle .icon.arrow {
+	 background: #fff;
+	 transform: translate(1rem, 0);
+}
+ button:hover .button-text {
+	 color: #fff;
+} 
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+    <div id = "login_div">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#" id="signup-form">
+                    <h1>Register</h1>
+                    <!-- <input type="text" placeholder="Name" /> -->
+                    <input type="email" placeholder="Email" id="email_field"/>
+                    <input type="password" placeholder="Password" id="password_field"/>
+                    <br>
+                    <button>Register</button>
+                </form>
+                
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#" id="login-form">
+                    <h1>Login</h1>
+                    <input type="email" placeholder="Email" id="login-email" />
+                    <input type="password" placeholder="Password" id="login-password"/>
+                    <div class="links">
+                    <a href="forgotpassword.html">Forgot Your Password?</a>
+                    <br><br>
+                    <a href="../index.html">Return To Home Page</a>
+                    </div>
+                    <button>Login</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+        
+                <div class="overlay">
+                    <div class="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>   
+                    </div>
+
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAxNpYy-IjARkWtiPHNq-vjnozGHkG3_j0",
+        authDomain: "login-27a9b.firebaseapp.com",
+        projectId: "login-27a9b",
+        storageBucket: "login-27a9b.appspot.com",
+        messagingSenderId: "358218026922",
+        appId: "1:358218026922:web:b9a8c3301592178912a5d3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //make auth and firestore references 
+    const auth = firebase.auth();
+    //const db = firebase.firestore();
+    </script>
+    
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+    
+
+</body>
+</html>
+
