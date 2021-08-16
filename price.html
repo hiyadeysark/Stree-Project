@@ -140,7 +140,7 @@
                 <div id="total">Total</div>
               </div>
               <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
-              <h5 v-if="total()">Sum: $ {{total()}}</h5>
+              <h5 v-if="total()">Sum: Rs. {{total()}}</h5>
             </div>
           </div>
           
@@ -150,7 +150,7 @@
               <img :src="item_data.img"/>
               <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
               <h2>{{item_data.title}}</h2>
-              <p>$ {{item_data.price}}</p>
+              <p>Rs. {{item_data.price}}</p>
             </div>
           </template>
           
@@ -158,7 +158,7 @@
             <div class="row">
               <img :src="buy_data.img"/>
               <h4>{{buy_data.title}}</h4>
-              <p>$ {{buy_data.price}}</p>
+              <p>Rs. {{buy_data.price}}</p>
               <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
               <div class="qty">{{buy_data.qty}}</div>
               <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
@@ -167,14 +167,15 @@
             </div>
           </template>
           
+
           <div class="container-btn">
-                <button class="learn-more" v-on:click="checkout">
+                <button class="learn-more" onClick="window.alert('Coming Soon!!')">
                 <span class="circle" aria-hidden="true">
                     <span class="icon arrow"></span>
                 </span>
                 <span class="button-text">Checkout</span>
                 </button>
-                <!-- <button>Learn More</button> -->
+                <!-- <button>Learn More</button>  -->
             </div>
         <!-- price end -->
         
