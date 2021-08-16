@@ -16,10 +16,12 @@ html, body {
     margin: 0 10px;
     position: relative;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    /* margin-left: 10px; */
 }
 #app #product .box img {
     width: 230px;
+    height: 180px;
 }
 #app #product .box i {
     width: 50px;
@@ -31,8 +33,8 @@ html, body {
     line-height: 50px;
     font-size: 1.4rem;
     position: absolute;
-    right: 20px;
-    top: 150px;
+    right: 10px;
+    top: 155px;
     box-shadow: 0 0 4px 2px rgba(80, 80, 80, 0.1);
     cursor: pointer;
     transition: all 0.3s;
@@ -41,10 +43,14 @@ html, body {
     transform: scale(1.05);
 }
 #app #product .box h2 {
+    margin-top: 25px;
     margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 #app #product .box p {
-    margin-left: 10px;
+    margin-left: 15px;
+    font-size: 20px;
 }
 #app #cart {
     margin-top: 50px;
@@ -53,31 +59,33 @@ html, body {
 #app #cart #head {
     width: 100%;
     border-bottom: 1px solid #bfbfbf;
-    height: 40px;
+    height: 60px;
     display: block;
 }
 #app #cart #head h3 {
     display: inline-block;
     line-height: 40px;
     margin: 0;
+    font-weight: bold;
 }
 #app #cart #head #price {
     display: inline-block;
     color: #777;
-    margin-left: 200px;
+    margin-left: 57px;
     line-height: 40px;
 }
 #app #cart #head #quantity {
     display: inline-block;
     color: #777;
-    margin-left: 100px;
+    margin-left: 98px;
     line-height: 40px;
 }
 #app #cart #head #total {
     display: inline-block;
     color: #777;
     line-height: 40px;
-    /* float: right; */
+    margin-right: 55px;
+    float: right;
 }
 #app #cart .row {
     width: 100%;
@@ -88,15 +96,19 @@ html, body {
     float: left;
 }
 #app #cart .row img {
-    height: 100px;
+    height: 80px;
+    width: 100px;
     float: left;
+    margin-top: 10px;
+    /* align-self: left; */
 }
 #app #cart .row h4 {
     float: left;
-    margin: 0;
-    line-height: 100px;
+    margin-top: 38px;
+    line-height: 25px;
     margin-left: 20px;
     width: 100px;
+    /* position: relative; */
 }
 #app #cart .row p {
     float: left;
@@ -147,15 +159,13 @@ html, body {
     text-align: right;
 }
 #app #cart .row .row p::before, #app #cart .row .box p::before, #app #cart .row .totalprice::before {
-    content: "$";
+    content: "Rs.";
 }
 #app #cart h5 {
     font-size: 20px;
     text-align: right;
+    margin-right: 30px;
 }
-
-
-
 
 .container-btn{
     margin-top: 20px;
